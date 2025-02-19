@@ -12,6 +12,10 @@ echo -e "Memory Free(%) $(awk "BEGIN {print $mem_free/($mem_free+$mem_used) * 10
 echo -e "Memory Used(%) $(awk "BEGIN {print $mem_used/($mem_free+$mem_used) * 100; exit}")"
 
 # Total disk usage (Free vs Used including percentage)
+echo "******| Disk    |******"
+read disk_used disk_free disk_used_pre<<< $(df -h --total | grep "total" | awk '{print $3, $4, $5}')
+echo -e "Disk Used $disk_used ($disk_used_pre)"
+echo -e "Disk Free $disk_free"
 
 # Top 5 processes by CPU usage
 
