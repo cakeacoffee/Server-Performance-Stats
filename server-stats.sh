@@ -18,5 +18,8 @@ echo -e "Disk Used $disk_used ($disk_used_pre)"
 echo -e "Disk Free $disk_free"
 
 # Top 5 processes by CPU usage
+echo "******|Top 5 CPU processes|******"
+ps -eo comm,%cpu --sort=-%cpu | head -n 6
+
 
 # Top 5 processes by memory usage
