@@ -21,5 +21,6 @@ echo -e "Disk Free $disk_free"
 echo "******|Top 5 CPU processes|******"
 ps -eo comm,%cpu --sort=-%cpu | head -n 6
 
-
 # Top 5 processes by memory usage
+echo "******|Top 5 CPU processes|******"
+ps -eo comm,%mem --sort=-%mem | head -n 6
